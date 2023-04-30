@@ -1,0 +1,210 @@
+*{
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: #7EC855;
+    font-family: 'Roboto', sans-serif;
+}
+
+.shopping-card {
+    width: 750px;
+    /* height: 1300px; */
+    margin: 80px auto;
+    background: #FFFFFF;
+    box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    height: 60px;
+    border-bottom: 1px solid #E1E8EE;
+    padding: 20px 30px;
+    color: #5E6977;
+    font-size: 18px;
+    font-weight: 400;
+  }
+   
+  .item {
+    padding: 20px 30px;
+    /* height: 150px; */
+    display: flex;
+    align-items: center;
+    border-bottom: #43484D solid 1px;
+  }
+   
+
+
+
+  .item:last-child {
+    border-top:  1px solid #E1E8EE;
+    border-bottom:  1px solid #E1E8EE;
+}
+
+.item:last-child {
+    border: none;
+}
+
+  .btns {
+    display: flex;
+    position: relative;
+    /* padding-top: 30px; */
+    margin-right: 20px;
+    gap:20px;
+  }
+  .delete-btn,
+  .like-btn {
+    display: inline-block;
+    Cursor: pointer;
+  }
+  .delete-btn {
+    width: 25px;
+    height: 25px;
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iMjQiIGhlaWdodD0iMjQiCnZpZXdCb3g9IjAgMCAyNCAyNCI+CjxwYXRoIGQ9Ik0gMTAuODA2NjQxIDIgQyAxMC4yODk2NDEgMiA5Ljc5NTY4NzUgMi4yMDQzMTI1IDkuNDI5Njg3NSAyLjU3MDMxMjUgTCA5IDMgTCA0IDMgQSAxLjAwMDEgMS4wMDAxIDAgMSAwIDQgNSBMIDIwIDUgQSAxLjAwMDEgMS4wMDAxIDAgMSAwIDIwIDMgTCAxNSAzIEwgMTQuNTcwMzEyIDIuNTcwMzEyNSBDIDE0LjIwNTMxMiAyLjIwNDMxMjUgMTMuNzEwMzU5IDIgMTMuMTkzMzU5IDIgTCAxMC44MDY2NDEgMiB6IE0gNC4zNjUyMzQ0IDcgTCA1Ljg5MjU3ODEgMjAuMjYzNjcyIEMgNi4wMjQ1NzgxIDIxLjI1MzY3MiA2Ljg3NyAyMiA3Ljg3NSAyMiBMIDE2LjEyMzA0NyAyMiBDIDE3LjEyMTA0NyAyMiAxNy45NzQ0MjIgMjEuMjU0ODU5IDE4LjEwNzQyMiAyMC4yNTU4NTkgTCAxOS42MzQ3NjYgNyBMIDQuMzY1MjM0NCA3IHoiPjwvcGF0aD4KPC9zdmc+') no-repeat center;
+    background-size: 100%;
+    
+  }
+  .like-btn {
+    background: url('images/twitter-heart.png');
+    width: 25px;
+    height: 25px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    filter: grayscale();
+  }
+
+  .is-active {
+    filter: none;
+  }
+   
+  @keyframes animate {
+    0%   { background-position: left;  }
+    50%  { background-position: right; }
+    100% { background-position: right; }
+  }
+
+  .image {
+    margin-right: 50px;
+    /* width: 100px;
+    height: 130px; */
+  }
+   
+.image img{
+  width: 130px;
+}
+
+  .description {
+    /* padding-top: 10px; */
+    margin-right: 60px;
+    width: 115px;
+  }
+   
+  .description span {
+    display: block;
+    font-size: 14px;
+    color: #43484D;
+    font-weight: 400;
+  }
+   
+  .description span:first-child {
+    margin-bottom: 5px;
+  }
+  .description span:last-child {
+    font-weight: 300;
+    margin-top: 8px;
+    color: #86939E;
+  }
+
+  .quantity {
+    /* padding-top: 20px; */
+    margin-right: 60px;
+    display: flex;
+    align-items: center;
+  }
+  .quantity input {
+    --webkit-appearance: none;
+    border: none;
+    text-align: center;
+    width: 32px;
+    font-size: 16px;
+    color: #43484D;
+    font-weight: 300;
+  }
+   
+  .btn {
+    width: 30px;
+    height: 30px;
+    background-color: #E1E8EE;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  .minus-btn img {
+    width: 100%;
+    height: 100%;
+  }
+  .plus-btn img {
+    width: 100%;
+    height: 100%;
+  }
+   
+  button:focus,
+  input:focus {
+    outline:0;
+  }
+
+  .total-price {
+    width: 83px;
+    text-align: center;
+    font-size: 16px;
+    color: #43484D;
+    font-weight: 300;
+  }
+
+  @media (max-width: 800px) {
+    .shopping-cart {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+    }
+    .item {
+      height: auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .image img {
+      width: 50%;
+    }
+    .image,
+    .quantity,
+    .description {
+      width: 100%;
+      text-align: center;
+      margin: 6px 0;
+    }
+    .buttons {
+      margin-right: 20px;
+    }
+  }
+  .cart-total {
+    text-align: end;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.cart-total-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: black;
+    margin-right: 20px;
+}
+
+.cart-total-price {
+    color: #333;
+    font-size: 1.1em;
+}
